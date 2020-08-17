@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 
 function Counter() {
-  // Déclare une nouvelle variable d'état, qu’on va appeler « count »
-  // Déclare une fonction setCount qui permet de modifier la valeur de count
-  // const [count, setCount] = useState(0);
-  const [value, setValue] = useState('')
+  const [value, setValue] = useState(0);
 
   return (
     <div>
-      <p>Le compteur est  à :  <input type="text"  onChange={e => setValue(e.target.value)}
-        value={value}/></p>
-      
+      <p>Le compteur est  à 
+      <input type="number" value={value}  onChange={(e) => setValue(parseInt(e.target.value))}
+        /></p>
       <button onClick={() => setValue(value + 1)}>
         +1
       </button>
